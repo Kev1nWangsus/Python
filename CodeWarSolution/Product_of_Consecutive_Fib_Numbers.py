@@ -1,5 +1,13 @@
 # Product of Consecutive Fibonacci Numbers
 
+# Raw solution
+def productFib(prod):
+    a = 0
+    b = 1
+    while a * b < prod:
+        a, b = b, a+b
+    return [a, b, a * b == prod]
+
 # Using Memoized Fibs
 cache = {}    
 def fibonacci(n):
@@ -19,11 +27,4 @@ def productFib(prod):
         n += 1
     return [fibonacci(n), fibonacci(n+1), fibonacci(n)*fibonacci(n+1) == prod]
     
-# Raw solution
-def productFib(prod):
-    a = 0
-    b = 1
-    while a * b < prod:
-        a, b = b, a+b
-    return [a, b, a * b == prod]
     
